@@ -1,0 +1,1429 @@
+﻿Compiled from "MainGUI.java"
+public class MainGUI extends javax.swing.JFrame {
+  private final LegalConsultSystem system;
+
+  private static final java.lang.String DATA_FILE;
+
+  private final javax.swing.table.DefaultTableModel lawyersModel;
+
+  private final javax.swing.table.DefaultTableModel clientsModel;
+
+  private final javax.swing.table.DefaultTableModel servicesModel;
+
+  public MainGUI();
+    Code:
+         0: aload_0
+         1: invokespecial #1                  // Method javax/swing/JFrame."<init>":()V
+         4: aload_0
+         5: new           #7                  // class javax/swing/table/DefaultTableModel
+         8: dup
+         9: iconst_4
+        10: anewarray     #9                  // class java/lang/String
+        13: dup
+        14: iconst_0
+        15: ldc           #11                 // String Name
+        17: aastore
+        18: dup
+        19: iconst_1
+        20: ldc           #13                 // String Spec
+        22: aastore
+        23: dup
+        24: iconst_2
+        25: ldc           #15                 // String Phone
+        27: aastore
+        28: dup
+        29: iconst_3
+        30: ldc           #17                 // String Consult
+        32: aastore
+        33: iconst_0
+        34: invokespecial #19                 // Method javax/swing/table/DefaultTableModel."<init>":([Ljava/lang/Object;I)V
+        37: putfield      #22                 // Field lawyersModel:Ljavax/swing/table/DefaultTableModel;
+        40: aload_0
+        41: new           #7                  // class javax/swing/table/DefaultTableModel
+        44: dup
+        45: iconst_3
+        46: anewarray     #9                  // class java/lang/String
+        49: dup
+        50: iconst_0
+        51: ldc           #28                 // String ID
+        53: aastore
+        54: dup
+        55: iconst_1
+        56: ldc           #11                 // String Name
+        58: aastore
+        59: dup
+        60: iconst_2
+        61: ldc           #15                 // String Phone
+        63: aastore
+        64: iconst_0
+        65: invokespecial #19                 // Method javax/swing/table/DefaultTableModel."<init>":([Ljava/lang/Object;I)V
+        68: putfield      #30                 // Field clientsModel:Ljavax/swing/table/DefaultTableModel;
+        71: aload_0
+        72: new           #7                  // class javax/swing/table/DefaultTableModel
+        75: dup
+        76: bipush        7
+        78: anewarray     #9                  // class java/lang/String
+        81: dup
+        82: iconst_0
+        83: ldc           #28                 // String ID
+        85: aastore
+        86: dup
+        87: iconst_1
+        88: ldc           #33                 // String Type
+        90: aastore
+        91: dup
+        92: iconst_2
+        93: ldc           #11                 // String Name
+        95: aastore
+        96: dup
+        97: iconst_3
+        98: ldc           #35                 // String Cost
+       100: aastore
+       101: dup
+       102: iconst_4
+       103: ldc           #37                 // String Date
+       105: aastore
+       106: dup
+       107: iconst_5
+       108: ldc           #39                 // String Lawyer
+       110: aastore
+       111: dup
+       112: bipush        6
+       114: ldc           #41                 // String Client
+       116: aastore
+       117: iconst_0
+       118: invokespecial #19                 // Method javax/swing/table/DefaultTableModel."<init>":([Ljava/lang/Object;I)V
+       121: putfield      #43                 // Field servicesModel:Ljavax/swing/table/DefaultTableModel;
+       124: ldc           #46                 // String legal_system.dat
+       126: invokestatic  #48                 // Method DataStore.load:(Ljava/lang/String;)LLegalConsultSystem;
+       129: astore_1
+       130: goto          142
+       133: astore_2
+       134: new           #56                 // class LegalConsultSystem
+       137: dup
+       138: invokespecial #58                 // Method LegalConsultSystem."<init>":()V
+       141: astore_1
+       142: aload_0
+       143: aload_1
+       144: putfield      #59                 // Field system:LLegalConsultSystem;
+       147: aload_0
+       148: ldc           #63                 // String Legal Consultation System
+       150: invokevirtual #65                 // Method setTitle:(Ljava/lang/String;)V
+       153: aload_0
+       154: iconst_3
+       155: invokevirtual #69                 // Method setDefaultCloseOperation:(I)V
+       158: aload_0
+       159: sipush        900
+       162: sipush        600
+       165: invokevirtual #73                 // Method setSize:(II)V
+       168: aload_0
+       169: aconst_null
+       170: invokevirtual #77                 // Method setLocationRelativeTo:(Ljava/awt/Component;)V
+       173: new           #81                 // class javax/swing/JTabbedPane
+       176: dup
+       177: invokespecial #83                 // Method javax/swing/JTabbedPane."<init>":()V
+       180: astore_2
+       181: aload_2
+       182: ldc           #84                 // String Lawyers
+       184: aload_0
+       185: invokevirtual #86                 // Method createLawyersPanel:()Ljavax/swing/JPanel;
+       188: invokevirtual #90                 // Method javax/swing/JTabbedPane.add:(Ljava/lang/String;Ljava/awt/Component;)Ljava/awt/Component;
+       191: pop
+       192: aload_2
+       193: ldc           #94                 // String Clients
+       195: aload_0
+       196: invokevirtual #96                 // Method createClientsPanel:()Ljavax/swing/JPanel;
+       199: invokevirtual #90                 // Method javax/swing/JTabbedPane.add:(Ljava/lang/String;Ljava/awt/Component;)Ljava/awt/Component;
+       202: pop
+       203: aload_2
+       204: ldc           #99                 // String Services
+       206: aload_0
+       207: invokevirtual #101                // Method createServicesPanel:()Ljavax/swing/JPanel;
+       210: invokevirtual #90                 // Method javax/swing/JTabbedPane.add:(Ljava/lang/String;Ljava/awt/Component;)Ljava/awt/Component;
+       213: pop
+       214: aload_2
+       215: ldc           #104                // String Reports
+       217: aload_0
+       218: invokevirtual #106                // Method createReportsPanel:()Ljavax/swing/JPanel;
+       221: invokevirtual #90                 // Method javax/swing/JTabbedPane.add:(Ljava/lang/String;Ljava/awt/Component;)Ljava/awt/Component;
+       224: pop
+       225: aload_0
+       226: invokevirtual #109                // Method refreshAllTables:()V
+       229: aload_0
+       230: aload_2
+       231: invokevirtual #112                // Method add:(Ljava/awt/Component;)Ljava/awt/Component;
+       234: pop
+       235: aload_0
+       236: new           #115                // class MainGUI$1
+       239: dup
+       240: aload_0
+       241: invokespecial #117                // Method MainGUI$1."<init>":(LMainGUI;)V
+       244: invokevirtual #120                // Method addWindowListener:(Ljava/awt/event/WindowListener;)V
+       247: return
+      Exception table:
+         from    to  target type
+           124   130   133   Class java/lang/Exception
+
+  private boolean isValidPhone(java.lang.String);
+    Code:
+         0: aload_1
+         1: ldc           #124                // String ^\\+?\\d[\\d\\s\\-]{7,14}\\d$
+         3: invokevirtual #126                // Method java/lang/String.matches:(Ljava/lang/String;)Z
+         6: ireturn
+
+  private boolean isValidClientId(java.lang.String);
+    Code:
+         0: aload_1
+         1: ldc           #130                // String ^[A-Za-z0-9]{2,20}$
+         3: invokevirtual #126                // Method java/lang/String.matches:(Ljava/lang/String;)Z
+         6: ireturn
+
+  private javax.swing.JPanel createLawyersPanel();
+    Code:
+         0: new           #132                // class javax/swing/JPanel
+         3: dup
+         4: new           #134                // class java/awt/BorderLayout
+         7: dup
+         8: invokespecial #136                // Method java/awt/BorderLayout."<init>":()V
+        11: invokespecial #137                // Method javax/swing/JPanel."<init>":(Ljava/awt/LayoutManager;)V
+        14: astore_1
+        15: new           #140                // class javax/swing/JTable
+        18: dup
+        19: aload_0
+        20: getfield      #22                 // Field lawyersModel:Ljavax/swing/table/DefaultTableModel;
+        23: invokespecial #142                // Method javax/swing/JTable."<init>":(Ljavax/swing/table/TableModel;)V
+        26: astore_2
+        27: aload_1
+        28: new           #145                // class javax/swing/JScrollPane
+        31: dup
+        32: aload_2
+        33: invokespecial #147                // Method javax/swing/JScrollPane."<init>":(Ljava/awt/Component;)V
+        36: ldc           #149                // String Center
+        38: invokevirtual #151                // Method javax/swing/JPanel.add:(Ljava/awt/Component;Ljava/lang/Object;)V
+        41: new           #132                // class javax/swing/JPanel
+        44: dup
+        45: new           #154                // class java/awt/GridLayout
+        48: dup
+        49: iconst_5
+        50: iconst_2
+        51: iconst_5
+        52: iconst_5
+        53: invokespecial #156                // Method java/awt/GridLayout."<init>":(IIII)V
+        56: invokespecial #137                // Method javax/swing/JPanel."<init>":(Ljava/awt/LayoutManager;)V
+        59: astore_3
+        60: new           #159                // class javax/swing/JTextField
+        63: dup
+        64: invokespecial #161                // Method javax/swing/JTextField."<init>":()V
+        67: astore        4
+        69: new           #159                // class javax/swing/JTextField
+        72: dup
+        73: invokespecial #161                // Method javax/swing/JTextField."<init>":()V
+        76: astore        5
+        78: new           #159                // class javax/swing/JTextField
+        81: dup
+        82: invokespecial #161                // Method javax/swing/JTextField."<init>":()V
+        85: astore        6
+        87: new           #159                // class javax/swing/JTextField
+        90: dup
+        91: invokespecial #161                // Method javax/swing/JTextField."<init>":()V
+        94: astore        7
+        96: aload_3
+        97: new           #162                // class javax/swing/JLabel
+       100: dup
+       101: ldc           #164                // String Consultation:
+       103: invokespecial #166                // Method javax/swing/JLabel."<init>":(Ljava/lang/String;)V
+       106: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       109: pop
+       110: aload_3
+       111: aload         4
+       113: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       116: pop
+       117: aload_3
+       118: new           #162                // class javax/swing/JLabel
+       121: dup
+       122: ldc           #169                // String Lawyer name:
+       124: invokespecial #166                // Method javax/swing/JLabel."<init>":(Ljava/lang/String;)V
+       127: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       130: pop
+       131: aload_3
+       132: aload         5
+       134: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       137: pop
+       138: aload_3
+       139: new           #162                // class javax/swing/JLabel
+       142: dup
+       143: ldc           #171                // String Phone:
+       145: invokespecial #166                // Method javax/swing/JLabel."<init>":(Ljava/lang/String;)V
+       148: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       151: pop
+       152: aload_3
+       153: aload         6
+       155: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       158: pop
+       159: aload_3
+       160: new           #162                // class javax/swing/JLabel
+       163: dup
+       164: ldc           #173                // String Specialization:
+       166: invokespecial #166                // Method javax/swing/JLabel."<init>":(Ljava/lang/String;)V
+       169: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       172: pop
+       173: aload_3
+       174: aload         7
+       176: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       179: pop
+       180: new           #175                // class javax/swing/JButton
+       183: dup
+       184: ldc           #177                // String Add lawyer
+       186: invokespecial #179                // Method javax/swing/JButton."<init>":(Ljava/lang/String;)V
+       189: astore        8
+       191: aload         8
+       193: aload_0
+       194: aload         4
+       196: aload         5
+       198: aload         6
+       200: aload         7
+       202: invokedynamic #180,  0            // InvokeDynamic #0:actionPerformed:(LMainGUI;Ljavax/swing/JTextField;Ljavax/swing/JTextField;Ljavax/swing/JTextField;Ljavax/swing/JTextField;)Ljava/awt/event/ActionListener;
+       207: invokevirtual #184                // Method javax/swing/JButton.addActionListener:(Ljava/awt/event/ActionListener;)V
+       210: new           #175                // class javax/swing/JButton
+       213: dup
+       214: ldc           #188                // String Delete selected
+       216: invokespecial #179                // Method javax/swing/JButton."<init>":(Ljava/lang/String;)V
+       219: astore        9
+       221: aload         9
+       223: aload_0
+       224: aload_2
+       225: invokedynamic #190,  0            // InvokeDynamic #1:actionPerformed:(LMainGUI;Ljavax/swing/JTable;)Ljava/awt/event/ActionListener;
+       230: invokevirtual #184                // Method javax/swing/JButton.addActionListener:(Ljava/awt/event/ActionListener;)V
+       233: new           #132                // class javax/swing/JPanel
+       236: dup
+       237: invokespecial #193                // Method javax/swing/JPanel."<init>":()V
+       240: astore        10
+       242: aload         10
+       244: aload         8
+       246: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       249: pop
+       250: aload         10
+       252: aload         9
+       254: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       257: pop
+       258: aload_1
+       259: aload_3
+       260: ldc           #194                // String North
+       262: invokevirtual #151                // Method javax/swing/JPanel.add:(Ljava/awt/Component;Ljava/lang/Object;)V
+       265: aload_1
+       266: aload         10
+       268: ldc           #196                // String South
+       270: invokevirtual #151                // Method javax/swing/JPanel.add:(Ljava/awt/Component;Ljava/lang/Object;)V
+       273: aload_1
+       274: areturn
+
+  private javax.swing.JPanel createClientsPanel();
+    Code:
+         0: new           #132                // class javax/swing/JPanel
+         3: dup
+         4: new           #134                // class java/awt/BorderLayout
+         7: dup
+         8: invokespecial #136                // Method java/awt/BorderLayout."<init>":()V
+        11: invokespecial #137                // Method javax/swing/JPanel."<init>":(Ljava/awt/LayoutManager;)V
+        14: astore_1
+        15: new           #140                // class javax/swing/JTable
+        18: dup
+        19: aload_0
+        20: getfield      #30                 // Field clientsModel:Ljavax/swing/table/DefaultTableModel;
+        23: invokespecial #142                // Method javax/swing/JTable."<init>":(Ljavax/swing/table/TableModel;)V
+        26: astore_2
+        27: aload_1
+        28: new           #145                // class javax/swing/JScrollPane
+        31: dup
+        32: aload_2
+        33: invokespecial #147                // Method javax/swing/JScrollPane."<init>":(Ljava/awt/Component;)V
+        36: ldc           #149                // String Center
+        38: invokevirtual #151                // Method javax/swing/JPanel.add:(Ljava/awt/Component;Ljava/lang/Object;)V
+        41: new           #132                // class javax/swing/JPanel
+        44: dup
+        45: new           #154                // class java/awt/GridLayout
+        48: dup
+        49: iconst_4
+        50: iconst_2
+        51: iconst_5
+        52: iconst_5
+        53: invokespecial #156                // Method java/awt/GridLayout."<init>":(IIII)V
+        56: invokespecial #137                // Method javax/swing/JPanel."<init>":(Ljava/awt/LayoutManager;)V
+        59: astore_3
+        60: new           #159                // class javax/swing/JTextField
+        63: dup
+        64: invokespecial #161                // Method javax/swing/JTextField."<init>":()V
+        67: astore        4
+        69: new           #159                // class javax/swing/JTextField
+        72: dup
+        73: invokespecial #161                // Method javax/swing/JTextField."<init>":()V
+        76: astore        5
+        78: new           #159                // class javax/swing/JTextField
+        81: dup
+        82: invokespecial #161                // Method javax/swing/JTextField."<init>":()V
+        85: astore        6
+        87: aload_3
+        88: new           #162                // class javax/swing/JLabel
+        91: dup
+        92: ldc           #198                // String ID:
+        94: invokespecial #166                // Method javax/swing/JLabel."<init>":(Ljava/lang/String;)V
+        97: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       100: pop
+       101: aload_3
+       102: aload         4
+       104: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       107: pop
+       108: aload_3
+       109: new           #162                // class javax/swing/JLabel
+       112: dup
+       113: ldc           #200                // String Name:
+       115: invokespecial #166                // Method javax/swing/JLabel."<init>":(Ljava/lang/String;)V
+       118: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       121: pop
+       122: aload_3
+       123: aload         5
+       125: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       128: pop
+       129: aload_3
+       130: new           #162                // class javax/swing/JLabel
+       133: dup
+       134: ldc           #171                // String Phone:
+       136: invokespecial #166                // Method javax/swing/JLabel."<init>":(Ljava/lang/String;)V
+       139: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       142: pop
+       143: aload_3
+       144: aload         6
+       146: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       149: pop
+       150: new           #175                // class javax/swing/JButton
+       153: dup
+       154: ldc           #202                // String Add client
+       156: invokespecial #179                // Method javax/swing/JButton."<init>":(Ljava/lang/String;)V
+       159: astore        7
+       161: aload         7
+       163: aload_0
+       164: aload         4
+       166: aload         5
+       168: aload         6
+       170: invokedynamic #204,  0            // InvokeDynamic #2:actionPerformed:(LMainGUI;Ljavax/swing/JTextField;Ljavax/swing/JTextField;Ljavax/swing/JTextField;)Ljava/awt/event/ActionListener;
+       175: invokevirtual #184                // Method javax/swing/JButton.addActionListener:(Ljava/awt/event/ActionListener;)V
+       178: new           #175                // class javax/swing/JButton
+       181: dup
+       182: ldc           #188                // String Delete selected
+       184: invokespecial #179                // Method javax/swing/JButton."<init>":(Ljava/lang/String;)V
+       187: astore        8
+       189: aload         8
+       191: aload_0
+       192: aload_2
+       193: invokedynamic #207,  0            // InvokeDynamic #3:actionPerformed:(LMainGUI;Ljavax/swing/JTable;)Ljava/awt/event/ActionListener;
+       198: invokevirtual #184                // Method javax/swing/JButton.addActionListener:(Ljava/awt/event/ActionListener;)V
+       201: new           #132                // class javax/swing/JPanel
+       204: dup
+       205: invokespecial #193                // Method javax/swing/JPanel."<init>":()V
+       208: astore        9
+       210: aload         9
+       212: aload         7
+       214: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       217: pop
+       218: aload         9
+       220: aload         8
+       222: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       225: pop
+       226: aload_1
+       227: aload_3
+       228: ldc           #194                // String North
+       230: invokevirtual #151                // Method javax/swing/JPanel.add:(Ljava/awt/Component;Ljava/lang/Object;)V
+       233: aload_1
+       234: aload         9
+       236: ldc           #196                // String South
+       238: invokevirtual #151                // Method javax/swing/JPanel.add:(Ljava/awt/Component;Ljava/lang/Object;)V
+       241: aload_1
+       242: areturn
+
+  private javax.swing.JPanel createServicesPanel();
+    Code:
+         0: new           #132                // class javax/swing/JPanel
+         3: dup
+         4: new           #134                // class java/awt/BorderLayout
+         7: dup
+         8: invokespecial #136                // Method java/awt/BorderLayout."<init>":()V
+        11: invokespecial #137                // Method javax/swing/JPanel."<init>":(Ljava/awt/LayoutManager;)V
+        14: astore_1
+        15: new           #140                // class javax/swing/JTable
+        18: dup
+        19: aload_0
+        20: getfield      #43                 // Field servicesModel:Ljavax/swing/table/DefaultTableModel;
+        23: invokespecial #142                // Method javax/swing/JTable."<init>":(Ljavax/swing/table/TableModel;)V
+        26: astore_2
+        27: aload_1
+        28: new           #145                // class javax/swing/JScrollPane
+        31: dup
+        32: aload_2
+        33: invokespecial #147                // Method javax/swing/JScrollPane."<init>":(Ljava/awt/Component;)V
+        36: ldc           #149                // String Center
+        38: invokevirtual #151                // Method javax/swing/JPanel.add:(Ljava/awt/Component;Ljava/lang/Object;)V
+        41: new           #132                // class javax/swing/JPanel
+        44: dup
+        45: new           #154                // class java/awt/GridLayout
+        48: dup
+        49: bipush        9
+        51: iconst_2
+        52: iconst_5
+        53: iconst_5
+        54: invokespecial #156                // Method java/awt/GridLayout."<init>":(IIII)V
+        57: invokespecial #137                // Method javax/swing/JPanel."<init>":(Ljava/awt/LayoutManager;)V
+        60: astore_3
+        61: new           #159                // class javax/swing/JTextField
+        64: dup
+        65: invokespecial #161                // Method javax/swing/JTextField."<init>":()V
+        68: astore        4
+        70: new           #159                // class javax/swing/JTextField
+        73: dup
+        74: invokespecial #161                // Method javax/swing/JTextField."<init>":()V
+        77: astore        5
+        79: new           #159                // class javax/swing/JTextField
+        82: dup
+        83: invokespecial #161                // Method javax/swing/JTextField."<init>":()V
+        86: astore        6
+        88: new           #159                // class javax/swing/JTextField
+        91: dup
+        92: invokespecial #161                // Method javax/swing/JTextField."<init>":()V
+        95: astore        7
+        97: new           #159                // class javax/swing/JTextField
+       100: dup
+       101: invokespecial #161                // Method javax/swing/JTextField."<init>":()V
+       104: astore        8
+       106: new           #159                // class javax/swing/JTextField
+       109: dup
+       110: invokespecial #161                // Method javax/swing/JTextField."<init>":()V
+       113: astore        9
+       115: new           #159                // class javax/swing/JTextField
+       118: dup
+       119: invokespecial #161                // Method javax/swing/JTextField."<init>":()V
+       122: astore        10
+       124: new           #208                // class DatePickerPopup
+       127: dup
+       128: aload         8
+       130: invokespecial #210                // Method DatePickerPopup."<init>":(Ljavax/swing/JTextField;)V
+       133: astore        11
+       135: new           #175                // class javax/swing/JButton
+       138: dup
+       139: ldc           #213                // String Pick date
+       141: invokespecial #179                // Method javax/swing/JButton."<init>":(Ljava/lang/String;)V
+       144: astore        12
+       146: aload         12
+       148: aload         11
+       150: aload         12
+       152: invokedynamic #215,  0            // InvokeDynamic #4:actionPerformed:(LDatePickerPopup;Ljavax/swing/JButton;)Ljava/awt/event/ActionListener;
+       157: invokevirtual #184                // Method javax/swing/JButton.addActionListener:(Ljava/awt/event/ActionListener;)V
+       160: aload         8
+       162: new           #218                // class MainGUI$2
+       165: dup
+       166: aload_0
+       167: aload         11
+       169: aload         8
+       171: invokespecial #220                // Method MainGUI$2."<init>":(LMainGUI;LDatePickerPopup;Ljavax/swing/JTextField;)V
+       174: invokevirtual #223                // Method javax/swing/JTextField.addMouseListener:(Ljava/awt/event/MouseListener;)V
+       177: aload_3
+       178: new           #162                // class javax/swing/JLabel
+       181: dup
+       182: ldc           #227                // String Service ID:
+       184: invokespecial #166                // Method javax/swing/JLabel."<init>":(Ljava/lang/String;)V
+       187: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       190: pop
+       191: aload_3
+       192: aload         4
+       194: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       197: pop
+       198: aload_3
+       199: new           #162                // class javax/swing/JLabel
+       202: dup
+       203: ldc           #229                // String Type:
+       205: invokespecial #166                // Method javax/swing/JLabel."<init>":(Ljava/lang/String;)V
+       208: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       211: pop
+       212: aload_3
+       213: aload         5
+       215: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       218: pop
+       219: aload_3
+       220: new           #162                // class javax/swing/JLabel
+       223: dup
+       224: ldc           #200                // String Name:
+       226: invokespecial #166                // Method javax/swing/JLabel."<init>":(Ljava/lang/String;)V
+       229: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       232: pop
+       233: aload_3
+       234: aload         6
+       236: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       239: pop
+       240: aload_3
+       241: new           #162                // class javax/swing/JLabel
+       244: dup
+       245: ldc           #231                // String Cost:
+       247: invokespecial #166                // Method javax/swing/JLabel."<init>":(Ljava/lang/String;)V
+       250: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       253: pop
+       254: aload_3
+       255: aload         7
+       257: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       260: pop
+       261: aload_3
+       262: new           #162                // class javax/swing/JLabel
+       265: dup
+       266: ldc           #233                // String Date (yyyy-MM-dd):
+       268: invokespecial #166                // Method javax/swing/JLabel."<init>":(Ljava/lang/String;)V
+       271: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       274: pop
+       275: aload_3
+       276: aload         8
+       278: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       281: pop
+       282: aload_3
+       283: new           #162                // class javax/swing/JLabel
+       286: dup
+       287: ldc           #235                // String
+       289: invokespecial #166                // Method javax/swing/JLabel."<init>":(Ljava/lang/String;)V
+       292: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       295: pop
+       296: aload_3
+       297: aload         12
+       299: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       302: pop
+       303: aload_3
+       304: new           #162                // class javax/swing/JLabel
+       307: dup
+       308: ldc           #169                // String Lawyer name:
+       310: invokespecial #166                // Method javax/swing/JLabel."<init>":(Ljava/lang/String;)V
+       313: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       316: pop
+       317: aload_3
+       318: aload         9
+       320: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       323: pop
+       324: aload_3
+       325: new           #162                // class javax/swing/JLabel
+       328: dup
+       329: ldc           #237                // String Client ID:
+       331: invokespecial #166                // Method javax/swing/JLabel."<init>":(Ljava/lang/String;)V
+       334: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       337: pop
+       338: aload_3
+       339: aload         10
+       341: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       344: pop
+       345: new           #175                // class javax/swing/JButton
+       348: dup
+       349: ldc           #239                // String Add service
+       351: invokespecial #179                // Method javax/swing/JButton."<init>":(Ljava/lang/String;)V
+       354: astore        13
+       356: aload         13
+       358: aload_0
+       359: aload         4
+       361: aload         5
+       363: aload         6
+       365: aload         7
+       367: aload         8
+       369: aload         9
+       371: aload         10
+       373: invokedynamic #241,  0            // InvokeDynamic #5:actionPerformed:(LMainGUI;Ljavax/swing/JTextField;Ljavax/swing/JTextField;Ljavax/swing/JTextField;Ljavax/swing/JTextField;Ljavax/swing/JTextField;Ljavax/swing/JTextField;Ljavax/swing/JTextField;)Ljava/awt/event/ActionListener;
+       378: invokevirtual #184                // Method javax/swing/JButton.addActionListener:(Ljava/awt/event/ActionListener;)V
+       381: new           #175                // class javax/swing/JButton
+       384: dup
+       385: ldc           #188                // String Delete selected
+       387: invokespecial #179                // Method javax/swing/JButton."<init>":(Ljava/lang/String;)V
+       390: astore        14
+       392: aload         14
+       394: aload_0
+       395: aload_2
+       396: invokedynamic #244,  0            // InvokeDynamic #6:actionPerformed:(LMainGUI;Ljavax/swing/JTable;)Ljava/awt/event/ActionListener;
+       401: invokevirtual #184                // Method javax/swing/JButton.addActionListener:(Ljava/awt/event/ActionListener;)V
+       404: new           #132                // class javax/swing/JPanel
+       407: dup
+       408: invokespecial #193                // Method javax/swing/JPanel."<init>":()V
+       411: astore        15
+       413: aload         15
+       415: aload         13
+       417: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       420: pop
+       421: aload         15
+       423: aload         14
+       425: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       428: pop
+       429: aload_1
+       430: aload_3
+       431: ldc           #194                // String North
+       433: invokevirtual #151                // Method javax/swing/JPanel.add:(Ljava/awt/Component;Ljava/lang/Object;)V
+       436: aload_1
+       437: aload         15
+       439: ldc           #196                // String South
+       441: invokevirtual #151                // Method javax/swing/JPanel.add:(Ljava/awt/Component;Ljava/lang/Object;)V
+       444: aload_1
+       445: areturn
+
+  private javax.swing.JPanel createReportsPanel();
+    Code:
+         0: new           #132                // class javax/swing/JPanel
+         3: dup
+         4: new           #134                // class java/awt/BorderLayout
+         7: dup
+         8: invokespecial #136                // Method java/awt/BorderLayout."<init>":()V
+        11: invokespecial #137                // Method javax/swing/JPanel."<init>":(Ljava/awt/LayoutManager;)V
+        14: astore_1
+        15: new           #245                // class javax/swing/JTextArea
+        18: dup
+        19: invokespecial #247                // Method javax/swing/JTextArea."<init>":()V
+        22: astore_2
+        23: aload_2
+        24: iconst_0
+        25: invokevirtual #248                // Method javax/swing/JTextArea.setEditable:(Z)V
+        28: aload_1
+        29: new           #145                // class javax/swing/JScrollPane
+        32: dup
+        33: aload_2
+        34: invokespecial #147                // Method javax/swing/JScrollPane."<init>":(Ljava/awt/Component;)V
+        37: ldc           #149                // String Center
+        39: invokevirtual #151                // Method javax/swing/JPanel.add:(Ljava/awt/Component;Ljava/lang/Object;)V
+        42: new           #132                // class javax/swing/JPanel
+        45: dup
+        46: invokespecial #193                // Method javax/swing/JPanel."<init>":()V
+        49: astore_3
+        50: new           #175                // class javax/swing/JButton
+        53: dup
+        54: ldc           #252                // String Refresh report
+        56: invokespecial #179                // Method javax/swing/JButton."<init>":(Ljava/lang/String;)V
+        59: astore        4
+        61: aload         4
+        63: aload_0
+        64: aload_2
+        65: invokedynamic #254,  0            // InvokeDynamic #7:actionPerformed:(LMainGUI;Ljavax/swing/JTextArea;)Ljava/awt/event/ActionListener;
+        70: invokevirtual #184                // Method javax/swing/JButton.addActionListener:(Ljava/awt/event/ActionListener;)V
+        73: new           #159                // class javax/swing/JTextField
+        76: dup
+        77: bipush        10
+        79: invokespecial #257                // Method javax/swing/JTextField."<init>":(I)V
+        82: astore        5
+        84: new           #208                // class DatePickerPopup
+        87: dup
+        88: aload         5
+        90: invokespecial #210                // Method DatePickerPopup."<init>":(Ljavax/swing/JTextField;)V
+        93: astore        6
+        95: new           #175                // class javax/swing/JButton
+        98: dup
+        99: ldc           #213                // String Pick date
+       101: invokespecial #179                // Method javax/swing/JButton."<init>":(Ljava/lang/String;)V
+       104: astore        7
+       106: aload         7
+       108: aload         6
+       110: aload         7
+       112: invokedynamic #259,  0            // InvokeDynamic #8:actionPerformed:(LDatePickerPopup;Ljavax/swing/JButton;)Ljava/awt/event/ActionListener;
+       117: invokevirtual #184                // Method javax/swing/JButton.addActionListener:(Ljava/awt/event/ActionListener;)V
+       120: aload         5
+       122: new           #260                // class MainGUI$3
+       125: dup
+       126: aload_0
+       127: aload         6
+       129: aload         5
+       131: invokespecial #262                // Method MainGUI$3."<init>":(LMainGUI;LDatePickerPopup;Ljavax/swing/JTextField;)V
+       134: invokevirtual #223                // Method javax/swing/JTextField.addMouseListener:(Ljava/awt/event/MouseListener;)V
+       137: new           #175                // class javax/swing/JButton
+       140: dup
+       141: ldc_w         #263                // String Count on date
+       144: invokespecial #179                // Method javax/swing/JButton."<init>":(Ljava/lang/String;)V
+       147: astore        8
+       149: aload         8
+       151: aload_0
+       152: aload         5
+       154: invokedynamic #265,  0            // InvokeDynamic #9:actionPerformed:(LMainGUI;Ljavax/swing/JTextField;)Ljava/awt/event/ActionListener;
+       159: invokevirtual #184                // Method javax/swing/JButton.addActionListener:(Ljava/awt/event/ActionListener;)V
+       162: aload_3
+       163: aload         4
+       165: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       168: pop
+       169: aload_3
+       170: new           #162                // class javax/swing/JLabel
+       173: dup
+       174: ldc_w         #268                // String Date:
+       177: invokespecial #166                // Method javax/swing/JLabel."<init>":(Ljava/lang/String;)V
+       180: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       183: pop
+       184: aload_3
+       185: aload         5
+       187: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       190: pop
+       191: aload_3
+       192: aload         7
+       194: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       197: pop
+       198: aload_3
+       199: aload         8
+       201: invokevirtual #168                // Method javax/swing/JPanel.add:(Ljava/awt/Component;)Ljava/awt/Component;
+       204: pop
+       205: aload_1
+       206: aload_3
+       207: ldc           #194                // String North
+       209: invokevirtual #151                // Method javax/swing/JPanel.add:(Ljava/awt/Component;Ljava/lang/Object;)V
+       212: aload_1
+       213: areturn
+
+  private void refreshLawyers();
+    Code:
+         0: aload_0
+         1: getfield      #22                 // Field lawyersModel:Ljavax/swing/table/DefaultTableModel;
+         4: iconst_0
+         5: invokevirtual #270                // Method javax/swing/table/DefaultTableModel.setRowCount:(I)V
+         8: aload_0
+         9: getfield      #59                 // Field system:LLegalConsultSystem;
+        12: invokevirtual #273                // Method LegalConsultSystem.getLawyers:()Ljava/util/List;
+        15: invokeinterface #277,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+        20: astore_1
+        21: aload_1
+        22: invokeinterface #283,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+        27: ifeq          82
+        30: aload_1
+        31: invokeinterface #289,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+        36: checkcast     #293                // class Lawyer
+        39: astore_2
+        40: aload_0
+        41: getfield      #22                 // Field lawyersModel:Ljavax/swing/table/DefaultTableModel;
+        44: iconst_4
+        45: anewarray     #294                // class java/lang/Object
+        48: dup
+        49: iconst_0
+        50: aload_2
+        51: invokevirtual #296                // Method Lawyer.getLawyerName:()Ljava/lang/String;
+        54: aastore
+        55: dup
+        56: iconst_1
+        57: aload_2
+        58: invokevirtual #300                // Method Lawyer.getSpec:()Ljava/lang/String;
+        61: aastore
+        62: dup
+        63: iconst_2
+        64: aload_2
+        65: invokevirtual #303                // Method Lawyer.getPNumber:()Ljava/lang/String;
+        68: aastore
+        69: dup
+        70: iconst_3
+        71: aload_2
+        72: invokevirtual #306                // Method Lawyer.getConsultName:()Ljava/lang/String;
+        75: aastore
+        76: invokevirtual #309                // Method javax/swing/table/DefaultTableModel.addRow:([Ljava/lang/Object;)V
+        79: goto          21
+        82: return
+
+  private void refreshClients();
+    Code:
+         0: aload_0
+         1: getfield      #30                 // Field clientsModel:Ljavax/swing/table/DefaultTableModel;
+         4: iconst_0
+         5: invokevirtual #270                // Method javax/swing/table/DefaultTableModel.setRowCount:(I)V
+         8: aload_0
+         9: getfield      #59                 // Field system:LLegalConsultSystem;
+        12: invokevirtual #313                // Method LegalConsultSystem.getClients:()Ljava/util/List;
+        15: invokeinterface #277,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+        20: astore_1
+        21: aload_1
+        22: invokeinterface #283,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+        27: ifeq          75
+        30: aload_1
+        31: invokeinterface #289,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+        36: checkcast     #316                // class Client
+        39: astore_2
+        40: aload_0
+        41: getfield      #30                 // Field clientsModel:Ljavax/swing/table/DefaultTableModel;
+        44: iconst_3
+        45: anewarray     #294                // class java/lang/Object
+        48: dup
+        49: iconst_0
+        50: aload_2
+        51: invokevirtual #317                // Method Client.getId:()Ljava/lang/String;
+        54: aastore
+        55: dup
+        56: iconst_1
+        57: aload_2
+        58: invokevirtual #320                // Method Client.getName:()Ljava/lang/String;
+        61: aastore
+        62: dup
+        63: iconst_2
+        64: aload_2
+        65: invokevirtual #323                // Method Client.getPNumber:()Ljava/lang/String;
+        68: aastore
+        69: invokevirtual #309                // Method javax/swing/table/DefaultTableModel.addRow:([Ljava/lang/Object;)V
+        72: goto          21
+        75: return
+
+  private void refreshServices();
+    Code:
+         0: aload_0
+         1: getfield      #43                 // Field servicesModel:Ljavax/swing/table/DefaultTableModel;
+         4: iconst_0
+         5: invokevirtual #270                // Method javax/swing/table/DefaultTableModel.setRowCount:(I)V
+         8: aload_0
+         9: getfield      #59                 // Field system:LLegalConsultSystem;
+        12: invokevirtual #324                // Method LegalConsultSystem.getServices:()Ljava/util/List;
+        15: invokeinterface #277,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+        20: astore_1
+        21: aload_1
+        22: invokeinterface #283,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+        27: ifeq          108
+        30: aload_1
+        31: invokeinterface #289,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+        36: checkcast     #327                // class Service
+        39: astore_2
+        40: aload_0
+        41: getfield      #43                 // Field servicesModel:Ljavax/swing/table/DefaultTableModel;
+        44: bipush        7
+        46: anewarray     #294                // class java/lang/Object
+        49: dup
+        50: iconst_0
+        51: aload_2
+        52: invokevirtual #329                // Method Service.getId:()Ljava/lang/String;
+        55: aastore
+        56: dup
+        57: iconst_1
+        58: aload_2
+        59: invokevirtual #330                // Method Service.getType:()Ljava/lang/String;
+        62: aastore
+        63: dup
+        64: iconst_2
+        65: aload_2
+        66: invokevirtual #333                // Method Service.getName:()Ljava/lang/String;
+        69: aastore
+        70: dup
+        71: iconst_3
+        72: aload_2
+        73: invokevirtual #334                // Method Service.getCost:()D
+        76: invokestatic  #338                // Method java/lang/Double.valueOf:(D)Ljava/lang/Double;
+        79: aastore
+        80: dup
+        81: iconst_4
+        82: aload_2
+        83: invokevirtual #344                // Method Service.getDate:()Ljava/lang/String;
+        86: aastore
+        87: dup
+        88: iconst_5
+        89: aload_2
+        90: invokevirtual #347                // Method Service.getLawyerName:()Ljava/lang/String;
+        93: aastore
+        94: dup
+        95: bipush        6
+        97: aload_2
+        98: invokevirtual #348                // Method Service.getClientId:()Ljava/lang/String;
+       101: aastore
+       102: invokevirtual #309                // Method javax/swing/table/DefaultTableModel.addRow:([Ljava/lang/Object;)V
+       105: goto          21
+       108: return
+
+  private void refreshAllTables();
+    Code:
+         0: aload_0
+         1: invokevirtual #351                // Method refreshLawyers:()V
+         4: aload_0
+         5: invokevirtual #354                // Method refreshClients:()V
+         8: aload_0
+         9: invokevirtual #357                // Method refreshServices:()V
+        12: return
+
+  private void saveData();
+    Code:
+         0: aload_0
+         1: getfield      #59                 // Field system:LLegalConsultSystem;
+         4: ldc           #46                 // String legal_system.dat
+         6: invokestatic  #360                // Method DataStore.save:(LLegalConsultSystem;Ljava/lang/String;)V
+         9: goto          17
+        12: astore_1
+        13: aload_1
+        14: invokevirtual #364                // Method java/lang/Exception.printStackTrace:()V
+        17: return
+      Exception table:
+         from    to  target type
+             0     9    12   Class java/lang/Exception
+
+  public static void main(java.lang.String[]);
+    Code:
+         0: invokedynamic #367,  0            // InvokeDynamic #10:run:()Ljava/lang/Runnable;
+         5: invokestatic  #371                // Method javax/swing/SwingUtilities.invokeLater:(Ljava/lang/Runnable;)V
+         8: return
+
+  private static void lambda$main$0();
+    Code:
+         0: new           #23                 // class MainGUI
+         3: dup
+         4: invokespecial #377                // Method "<init>":()V
+         7: iconst_1
+         8: invokevirtual #378                // Method setVisible:(Z)V
+        11: return
+
+  private void lambda$createReportsPanel$2(javax.swing.JTextField, java.awt.event.ActionEvent);
+    Code:
+         0: aload_1
+         1: invokevirtual #381                // Method javax/swing/JTextField.getText:()Ljava/lang/String;
+         4: invokevirtual #384                // Method java/lang/String.trim:()Ljava/lang/String;
+         7: invokestatic  #387                // Method java/time/LocalDate.parse:(Ljava/lang/CharSequence;)Ljava/time/LocalDate;
+        10: astore_3
+        11: aload_0
+        12: getfield      #59                 // Field system:LLegalConsultSystem;
+        15: aload_3
+        16: invokevirtual #393                // Method LegalConsultSystem.countServicesOnDate:(Ljava/time/LocalDate;)J
+        19: lstore        4
+        21: aload_0
+        22: aload_3
+        23: invokestatic  #397                // Method java/lang/String.valueOf:(Ljava/lang/Object;)Ljava/lang/String;
+        26: lload         4
+        28: invokedynamic #400,  0            // InvokeDynamic #11:makeConcatWithConstants:(Ljava/lang/String;J)Ljava/lang/String;
+        33: invokestatic  #404                // Method javax/swing/JOptionPane.showMessageDialog:(Ljava/awt/Component;Ljava/lang/Object;)V
+        36: goto          47
+        39: astore_3
+        40: aload_0
+        41: ldc_w         #409                // String Date must use yyyy-MM-dd.
+        44: invokestatic  #404                // Method javax/swing/JOptionPane.showMessageDialog:(Ljava/awt/Component;Ljava/lang/Object;)V
+        47: return
+      Exception table:
+         from    to  target type
+             0    36    39   Class java/lang/Exception
+
+  private static void lambda$createReportsPanel$1(DatePickerPopup, javax.swing.JButton, java.awt.event.ActionEvent);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: iconst_0
+         3: aload_1
+         4: invokevirtual #411                // Method javax/swing/JButton.getHeight:()I
+         7: invokevirtual #415                // Method DatePickerPopup.show:(Ljava/awt/Component;II)V
+        10: return
+
+  private void lambda$createReportsPanel$0(javax.swing.JTextArea, java.awt.event.ActionEvent);
+    Code:
+         0: new           #419                // class java/lang/StringBuilder
+         3: dup
+         4: invokespecial #421                // Method java/lang/StringBuilder."<init>":()V
+         7: astore_3
+         8: aload_3
+         9: ldc_w         #422                // String Clients:
+        12: invokevirtual #424                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        15: aload_0
+        16: getfield      #59                 // Field system:LLegalConsultSystem;
+        19: invokevirtual #428                // Method LegalConsultSystem.countClients:()I
+        22: invokevirtual #431                // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+        25: ldc_w         #434                // String \n
+        28: invokevirtual #424                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        31: pop
+        32: aload_3
+        33: ldc_w         #436                // String Lawyers:
+        36: invokevirtual #424                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        39: aload_0
+        40: getfield      #59                 // Field system:LLegalConsultSystem;
+        43: invokevirtual #438                // Method LegalConsultSystem.countLawyers:()I
+        46: invokevirtual #431                // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+        49: ldc_w         #434                // String \n
+        52: invokevirtual #424                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        55: pop
+        56: aload_3
+        57: ldc_w         #441                // String Services:
+        60: invokevirtual #424                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        63: aload_0
+        64: getfield      #59                 // Field system:LLegalConsultSystem;
+        67: invokevirtual #443                // Method LegalConsultSystem.countServices:()I
+        70: invokevirtual #431                // Method java/lang/StringBuilder.append:(I)Ljava/lang/StringBuilder;
+        73: ldc_w         #434                // String \n
+        76: invokevirtual #424                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        79: pop
+        80: aload_3
+        81: ldc_w         #446                // String Total cost:
+        84: invokevirtual #424                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        87: aload_0
+        88: getfield      #59                 // Field system:LLegalConsultSystem;
+        91: invokevirtual #448                // Method LegalConsultSystem.totalServicesCost:()D
+        94: invokevirtual #451                // Method java/lang/StringBuilder.append:(D)Ljava/lang/StringBuilder;
+        97: ldc_w         #434                // String \n
+       100: invokevirtual #424                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       103: pop
+       104: aload_3
+       105: ldc_w         #454                // String Most expensive:
+       108: invokevirtual #424                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       111: aload_0
+       112: getfield      #59                 // Field system:LLegalConsultSystem;
+       115: invokevirtual #456                // Method LegalConsultSystem.mostExpensiveService:()Ljava/util/Optional;
+       118: invokedynamic #460,  0            // InvokeDynamic #12:apply:()Ljava/util/function/Function;
+       123: invokevirtual #464                // Method java/util/Optional.map:(Ljava/util/function/Function;)Ljava/util/Optional;
+       126: ldc_w         #470                // String None
+       129: invokevirtual #472                // Method java/util/Optional.orElse:(Ljava/lang/Object;)Ljava/lang/Object;
+       132: checkcast     #9                  // class java/lang/String
+       135: invokevirtual #424                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       138: ldc_w         #434                // String \n
+       141: invokevirtual #424                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       144: pop
+       145: aload_3
+       146: ldc_w         #476                // String Busiest lawyer:
+       149: invokevirtual #424                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       152: aload_0
+       153: getfield      #59                 // Field system:LLegalConsultSystem;
+       156: invokevirtual #478                // Method LegalConsultSystem.busiestLawyer:()Ljava/util/Optional;
+       159: ldc_w         #470                // String None
+       162: invokevirtual #472                // Method java/util/Optional.orElse:(Ljava/lang/Object;)Ljava/lang/Object;
+       165: checkcast     #9                  // class java/lang/String
+       168: invokevirtual #424                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       171: ldc_w         #434                // String \n
+       174: invokevirtual #424                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       177: pop
+       178: aload_3
+       179: ldc_w         #481                // String Date with most services:
+       182: invokevirtual #424                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       185: aload_0
+       186: getfield      #59                 // Field system:LLegalConsultSystem;
+       189: invokevirtual #483                // Method LegalConsultSystem.dateWithMostServices:()Ljava/util/Optional;
+       192: invokedynamic #486,  0            // InvokeDynamic #13:apply:()Ljava/util/function/Function;
+       197: invokevirtual #464                // Method java/util/Optional.map:(Ljava/util/function/Function;)Ljava/util/Optional;
+       200: ldc_w         #470                // String None
+       203: invokevirtual #472                // Method java/util/Optional.orElse:(Ljava/lang/Object;)Ljava/lang/Object;
+       206: checkcast     #9                  // class java/lang/String
+       209: invokevirtual #424                // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       212: pop
+       213: aload_1
+       214: aload_3
+       215: invokevirtual #487                // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       218: invokevirtual #490                // Method javax/swing/JTextArea.setText:(Ljava/lang/String;)V
+       221: return
+
+  private void lambda$createServicesPanel$2(javax.swing.JTable, java.awt.event.ActionEvent);
+    Code:
+         0: aload_1
+         1: invokevirtual #493                // Method javax/swing/JTable.getSelectedRow:()I
+         4: istore_3
+         5: iload_3
+         6: iflt          57
+         9: aload_0
+        10: getfield      #43                 // Field servicesModel:Ljavax/swing/table/DefaultTableModel;
+        13: iload_3
+        14: iconst_0
+        15: invokevirtual #496                // Method javax/swing/table/DefaultTableModel.getValueAt:(II)Ljava/lang/Object;
+        18: checkcast     #9                  // class java/lang/String
+        21: astore        4
+        23: aload_0
+        24: getfield      #59                 // Field system:LLegalConsultSystem;
+        27: aload         4
+        29: invokevirtual #500                // Method LegalConsultSystem.findServiceById:(Ljava/lang/String;)Ljava/util/Optional;
+        32: aload_0
+        33: getfield      #59                 // Field system:LLegalConsultSystem;
+        36: dup
+        37: invokestatic  #504                // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+        40: pop
+        41: invokedynamic #509,  0            // InvokeDynamic #14:accept:(LLegalConsultSystem;)Ljava/util/function/Consumer;
+        46: invokevirtual #513                // Method java/util/Optional.ifPresent:(Ljava/util/function/Consumer;)V
+        49: aload_0
+        50: invokevirtual #357                // Method refreshServices:()V
+        53: aload_0
+        54: invokevirtual #517                // Method saveData:()V
+        57: return
+
+  private void lambda$createServicesPanel$1(javax.swing.JTextField, javax.swing.JTextField, javax.swing.JTextField, javax.swing.JTextField, javax.swing.JTextField, javax.swing.JTextField, javax.swing.JTextField, java.awt.event.ActionEvent);
+    Code:
+         0: aload_1
+         1: invokevirtual #381                // Method javax/swing/JTextField.getText:()Ljava/lang/String;
+         4: invokevirtual #384                // Method java/lang/String.trim:()Ljava/lang/String;
+         7: astore        9
+         9: aload_2
+        10: invokevirtual #381                // Method javax/swing/JTextField.getText:()Ljava/lang/String;
+        13: invokevirtual #384                // Method java/lang/String.trim:()Ljava/lang/String;
+        16: astore        10
+        18: aload_3
+        19: invokevirtual #381                // Method javax/swing/JTextField.getText:()Ljava/lang/String;
+        22: invokevirtual #384                // Method java/lang/String.trim:()Ljava/lang/String;
+        25: astore        11
+        27: aload         4
+        29: invokevirtual #381                // Method javax/swing/JTextField.getText:()Ljava/lang/String;
+        32: invokevirtual #384                // Method java/lang/String.trim:()Ljava/lang/String;
+        35: invokestatic  #520                // Method java/lang/Double.parseDouble:(Ljava/lang/String;)D
+        38: dstore        12
+        40: aload         5
+        42: invokevirtual #381                // Method javax/swing/JTextField.getText:()Ljava/lang/String;
+        45: invokevirtual #384                // Method java/lang/String.trim:()Ljava/lang/String;
+        48: astore        14
+        50: aload         6
+        52: invokevirtual #381                // Method javax/swing/JTextField.getText:()Ljava/lang/String;
+        55: invokevirtual #384                // Method java/lang/String.trim:()Ljava/lang/String;
+        58: astore        15
+        60: aload         7
+        62: invokevirtual #381                // Method javax/swing/JTextField.getText:()Ljava/lang/String;
+        65: invokevirtual #384                // Method java/lang/String.trim:()Ljava/lang/String;
+        68: astore        16
+        70: aload         9
+        72: invokevirtual #524                // Method java/lang/String.isEmpty:()Z
+        75: ifne          94
+        78: aload         11
+        80: invokevirtual #524                // Method java/lang/String.isEmpty:()Z
+        83: ifne          94
+        86: aload         15
+        88: invokevirtual #524                // Method java/lang/String.isEmpty:()Z
+        91: ifeq          102
+        94: aload_0
+        95: ldc_w         #527                // String Service ID, name, and lawyer are required.
+        98: invokestatic  #404                // Method javax/swing/JOptionPane.showMessageDialog:(Ljava/awt/Component;Ljava/lang/Object;)V
+       101: return
+       102: aload         14
+       104: invokestatic  #387                // Method java/time/LocalDate.parse:(Ljava/lang/CharSequence;)Ljava/time/LocalDate;
+       107: pop
+       108: aload_0
+       109: aload         16
+       111: invokevirtual #529                // Method isValidClientId:(Ljava/lang/String;)Z
+       114: ifne          125
+       117: aload_0
+       118: ldc_w         #532                // String Client ID format is invalid.
+       121: invokestatic  #404                // Method javax/swing/JOptionPane.showMessageDialog:(Ljava/awt/Component;Ljava/lang/Object;)V
+       124: return
+       125: aload_0
+       126: getfield      #59                 // Field system:LLegalConsultSystem;
+       129: new           #327                // class Service
+       132: dup
+       133: aload         9
+       135: aload         10
+       137: aload         11
+       139: dload         12
+       141: aload         14
+       143: aload         15
+       145: aload         16
+       147: invokespecial #534                // Method Service."<init>":(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;DLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+       150: invokevirtual #537                // Method LegalConsultSystem.addService:(LService;)V
+       153: aload_0
+       154: invokevirtual #357                // Method refreshServices:()V
+       157: aload_0
+       158: invokevirtual #517                // Method saveData:()V
+       161: aload_1
+       162: ldc           #235                // String
+       164: invokevirtual #541                // Method javax/swing/JTextField.setText:(Ljava/lang/String;)V
+       167: aload_2
+       168: ldc           #235                // String
+       170: invokevirtual #541                // Method javax/swing/JTextField.setText:(Ljava/lang/String;)V
+       173: aload_3
+       174: ldc           #235                // String
+       176: invokevirtual #541                // Method javax/swing/JTextField.setText:(Ljava/lang/String;)V
+       179: aload         4
+       181: ldc           #235                // String
+       183: invokevirtual #541                // Method javax/swing/JTextField.setText:(Ljava/lang/String;)V
+       186: aload         5
+       188: ldc           #235                // String
+       190: invokevirtual #541                // Method javax/swing/JTextField.setText:(Ljava/lang/String;)V
+       193: aload         6
+       195: ldc           #235                // String
+       197: invokevirtual #541                // Method javax/swing/JTextField.setText:(Ljava/lang/String;)V
+       200: aload         7
+       202: ldc           #235                // String
+       204: invokevirtual #541                // Method javax/swing/JTextField.setText:(Ljava/lang/String;)V
+       207: goto          226
+       210: astore        9
+       212: aload_0
+       213: aload         9
+       215: invokevirtual #542                // Method java/lang/Exception.getMessage:()Ljava/lang/String;
+       218: invokedynamic #545,  0            // InvokeDynamic #15:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+       223: invokestatic  #404                // Method javax/swing/JOptionPane.showMessageDialog:(Ljava/awt/Component;Ljava/lang/Object;)V
+       226: return
+      Exception table:
+         from    to  target type
+             0   101   210   Class java/lang/Exception
+           102   124   210   Class java/lang/Exception
+           125   207   210   Class java/lang/Exception
+
+  private static void lambda$createServicesPanel$0(DatePickerPopup, javax.swing.JButton, java.awt.event.ActionEvent);
+    Code:
+         0: aload_0
+         1: aload_1
+         2: iconst_0
+         3: aload_1
+         4: invokevirtual #411                // Method javax/swing/JButton.getHeight:()I
+         7: invokevirtual #415                // Method DatePickerPopup.show:(Ljava/awt/Component;II)V
+        10: return
+
+  private void lambda$createClientsPanel$1(javax.swing.JTable, java.awt.event.ActionEvent);
+    Code:
+         0: aload_1
+         1: invokevirtual #493                // Method javax/swing/JTable.getSelectedRow:()I
+         4: istore_3
+         5: iload_3
+         6: iflt          57
+         9: aload_0
+        10: getfield      #30                 // Field clientsModel:Ljavax/swing/table/DefaultTableModel;
+        13: iload_3
+        14: iconst_0
+        15: invokevirtual #496                // Method javax/swing/table/DefaultTableModel.getValueAt:(II)Ljava/lang/Object;
+        18: checkcast     #9                  // class java/lang/String
+        21: astore        4
+        23: aload_0
+        24: getfield      #59                 // Field system:LLegalConsultSystem;
+        27: aload         4
+        29: invokevirtual #548                // Method LegalConsultSystem.findClientById:(Ljava/lang/String;)Ljava/util/Optional;
+        32: aload_0
+        33: getfield      #59                 // Field system:LLegalConsultSystem;
+        36: dup
+        37: invokestatic  #504                // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+        40: pop
+        41: invokedynamic #551,  0            // InvokeDynamic #16:accept:(LLegalConsultSystem;)Ljava/util/function/Consumer;
+        46: invokevirtual #513                // Method java/util/Optional.ifPresent:(Ljava/util/function/Consumer;)V
+        49: aload_0
+        50: invokevirtual #354                // Method refreshClients:()V
+        53: aload_0
+        54: invokevirtual #517                // Method saveData:()V
+        57: return
+
+  private void lambda$createClientsPanel$0(javax.swing.JTextField, javax.swing.JTextField, javax.swing.JTextField, java.awt.event.ActionEvent);
+    Code:
+         0: aload_1
+         1: invokevirtual #381                // Method javax/swing/JTextField.getText:()Ljava/lang/String;
+         4: invokevirtual #384                // Method java/lang/String.trim:()Ljava/lang/String;
+         7: astore        5
+         9: aload_2
+        10: invokevirtual #381                // Method javax/swing/JTextField.getText:()Ljava/lang/String;
+        13: invokevirtual #384                // Method java/lang/String.trim:()Ljava/lang/String;
+        16: astore        6
+        18: aload_3
+        19: invokevirtual #381                // Method javax/swing/JTextField.getText:()Ljava/lang/String;
+        22: invokevirtual #384                // Method java/lang/String.trim:()Ljava/lang/String;
+        25: astore        7
+        27: aload         5
+        29: invokevirtual #524                // Method java/lang/String.isEmpty:()Z
+        32: ifne          43
+        35: aload         6
+        37: invokevirtual #524                // Method java/lang/String.isEmpty:()Z
+        40: ifeq          51
+        43: aload_0
+        44: ldc_w         #552                // String ID and name are required.
+        47: invokestatic  #404                // Method javax/swing/JOptionPane.showMessageDialog:(Ljava/awt/Component;Ljava/lang/Object;)V
+        50: return
+        51: aload_0
+        52: aload         5
+        54: invokevirtual #529                // Method isValidClientId:(Ljava/lang/String;)Z
+        57: ifne          68
+        60: aload_0
+        61: ldc_w         #554                // String Client ID must be 2-20 letters or digits.
+        64: invokestatic  #404                // Method javax/swing/JOptionPane.showMessageDialog:(Ljava/awt/Component;Ljava/lang/Object;)V
+        67: return
+        68: aload         7
+        70: invokevirtual #524                // Method java/lang/String.isEmpty:()Z
+        73: ifne          93
+        76: aload_0
+        77: aload         7
+        79: invokevirtual #556                // Method isValidPhone:(Ljava/lang/String;)Z
+        82: ifne          93
+        85: aload_0
+        86: ldc_w         #559                // String Phone format is invalid.
+        89: invokestatic  #404                // Method javax/swing/JOptionPane.showMessageDialog:(Ljava/awt/Component;Ljava/lang/Object;)V
+        92: return
+        93: aload_0
+        94: getfield      #59                 // Field system:LLegalConsultSystem;
+        97: new           #316                // class Client
+       100: dup
+       101: aload         5
+       103: aload         6
+       105: aload         7
+       107: invokespecial #561                // Method Client."<init>":(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+       110: invokevirtual #564                // Method LegalConsultSystem.addClient:(LClient;)V
+       113: aload_0
+       114: invokevirtual #354                // Method refreshClients:()V
+       117: aload_0
+       118: invokevirtual #517                // Method saveData:()V
+       121: aload_1
+       122: ldc           #235                // String
+       124: invokevirtual #541                // Method javax/swing/JTextField.setText:(Ljava/lang/String;)V
+       127: aload_2
+       128: ldc           #235                // String
+       130: invokevirtual #541                // Method javax/swing/JTextField.setText:(Ljava/lang/String;)V
+       133: aload_3
+       134: ldc           #235                // String
+       136: invokevirtual #541                // Method javax/swing/JTextField.setText:(Ljava/lang/String;)V
+       139: return
+
+  private void lambda$createLawyersPanel$1(javax.swing.JTable, java.awt.event.ActionEvent);
+    Code:
+         0: aload_1
+         1: invokevirtual #493                // Method javax/swing/JTable.getSelectedRow:()I
+         4: istore_3
+         5: iload_3
+         6: iflt          57
+         9: aload_0
+        10: getfield      #22                 // Field lawyersModel:Ljavax/swing/table/DefaultTableModel;
+        13: iload_3
+        14: iconst_0
+        15: invokevirtual #496                // Method javax/swing/table/DefaultTableModel.getValueAt:(II)Ljava/lang/Object;
+        18: checkcast     #9                  // class java/lang/String
+        21: astore        4
+        23: aload_0
+        24: getfield      #59                 // Field system:LLegalConsultSystem;
+        27: aload         4
+        29: invokevirtual #568                // Method LegalConsultSystem.findLawyerByName:(Ljava/lang/String;)Ljava/util/Optional;
+        32: aload_0
+        33: getfield      #59                 // Field system:LLegalConsultSystem;
+        36: dup
+        37: invokestatic  #504                // Method java/util/Objects.requireNonNull:(Ljava/lang/Object;)Ljava/lang/Object;
+        40: pop
+        41: invokedynamic #571,  0            // InvokeDynamic #17:accept:(LLegalConsultSystem;)Ljava/util/function/Consumer;
+        46: invokevirtual #513                // Method java/util/Optional.ifPresent:(Ljava/util/function/Consumer;)V
+        49: aload_0
+        50: invokevirtual #351                // Method refreshLawyers:()V
+        53: aload_0
+        54: invokevirtual #517                // Method saveData:()V
+        57: return
+
+  private void lambda$createLawyersPanel$0(javax.swing.JTextField, javax.swing.JTextField, javax.swing.JTextField, javax.swing.JTextField, java.awt.event.ActionEvent);
+    Code:
+         0: aload_1
+         1: invokevirtual #381                // Method javax/swing/JTextField.getText:()Ljava/lang/String;
+         4: invokevirtual #384                // Method java/lang/String.trim:()Ljava/lang/String;
+         7: astore        6
+         9: aload_2
+        10: invokevirtual #381                // Method javax/swing/JTextField.getText:()Ljava/lang/String;
+        13: invokevirtual #384                // Method java/lang/String.trim:()Ljava/lang/String;
+        16: astore        7
+        18: aload_3
+        19: invokevirtual #381                // Method javax/swing/JTextField.getText:()Ljava/lang/String;
+        22: invokevirtual #384                // Method java/lang/String.trim:()Ljava/lang/String;
+        25: astore        8
+        27: aload         4
+        29: invokevirtual #381                // Method javax/swing/JTextField.getText:()Ljava/lang/String;
+        32: invokevirtual #384                // Method java/lang/String.trim:()Ljava/lang/String;
+        35: astore        9
+        37: aload         7
+        39: invokevirtual #524                // Method java/lang/String.isEmpty:()Z
+        42: ifeq          53
+        45: aload_0
+        46: ldc_w         #572                // String Enter the lawyer name.
+        49: invokestatic  #404                // Method javax/swing/JOptionPane.showMessageDialog:(Ljava/awt/Component;Ljava/lang/Object;)V
+        52: return
+        53: aload         8
+        55: invokevirtual #524                // Method java/lang/String.isEmpty:()Z
+        58: ifne          78
+        61: aload_0
+        62: aload         8
+        64: invokevirtual #556                // Method isValidPhone:(Ljava/lang/String;)Z
+        67: ifne          78
+        70: aload_0
+        71: ldc_w         #559                // String Phone format is invalid.
+        74: invokestatic  #404                // Method javax/swing/JOptionPane.showMessageDialog:(Ljava/awt/Component;Ljava/lang/Object;)V
+        77: return
+        78: aload_0
+        79: getfield      #59                 // Field system:LLegalConsultSystem;
+        82: new           #293                // class Lawyer
+        85: dup
+        86: aload         6
+        88: aload         7
+        90: aload         8
+        92: aload         9
+        94: invokespecial #574                // Method Lawyer."<init>":(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+        97: invokevirtual #577                // Method LegalConsultSystem.addLawyer:(LLawyer;)V
+       100: aload_0
+       101: invokevirtual #351                // Method refreshLawyers:()V
+       104: aload_0
+       105: invokevirtual #517                // Method saveData:()V
+       108: aload_1
+       109: ldc           #235                // String
+       111: invokevirtual #541                // Method javax/swing/JTextField.setText:(Ljava/lang/String;)V
+       114: aload_2
+       115: ldc           #235                // String
+       117: invokevirtual #541                // Method javax/swing/JTextField.setText:(Ljava/lang/String;)V
+       120: aload_3
+       121: ldc           #235                // String
+       123: invokevirtual #541                // Method javax/swing/JTextField.setText:(Ljava/lang/String;)V
+       126: aload         4
+       128: ldc           #235                // String
+       130: invokevirtual #541                // Method javax/swing/JTextField.setText:(Ljava/lang/String;)V
+       133: return
+}
